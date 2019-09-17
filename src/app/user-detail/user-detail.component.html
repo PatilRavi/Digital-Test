@@ -1,8 +1,10 @@
 <div class="container">
   <ng-container *ngFor="let post of posts; let i = index">
-    <div *ngIf="i < 3 || !loadMoreFlag" class="accordion" (click)="getPosts($event, i)">
-      <div class="title" [innerHTML]="post.title | titlecase"></div>
-      <div [innerHTML]="post.body | titlecase"></div>
+    <div *ngIf="i < 3 || !loadMoreFlag" class="accordion">
+      <div class="accordionTab" (click)="getPosts($event, i)">
+        <div class="title" [innerHTML]="post.title | titlecase"></div>
+        <div class="body" [innerHTML]="post.body | titlecase"></div>
+      </div>
       <div class="panel" *ngIf="post.isActive" hide="!post.isActive">
         <app-comment commentId="{{ selectedId }}"></app-comment>
       </div>
