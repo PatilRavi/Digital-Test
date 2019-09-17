@@ -1,0 +1,12 @@
+nav{    
+    background-color: #00a1ff;
+}
+.navbar .nav-item a{
+    color: #fff;
+}
+.navbar .navbar-nav .active{
+    background: #ffa217;
+}
+.navbar-collapse.active{
+    display: block;
+}

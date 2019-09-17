@@ -1,0 +1,9 @@
+<ng-container>
+  <div class="usercomment" *ngFor="let comment of usersComments">
+    <div>Post ID: <span [innerHTML]="comment.postId"></span></div>
+    <div>Name: <span [innerHTML]="comment.name | titlecase"></span></div>
+    <div>Email:<span [innerHTML]="comment.email"></span></div>
+    <div>Body: <span [innerHTML]="comment.body"></span></div>
+    <hr>
+  </div>  
+</ng-container>

@@ -1,0 +1,14 @@
+<div class="container">
+  <ng-container *ngFor="let post of posts; let i = index">
+    <div *ngIf="i < 3 || !loadMoreFlag" class="accordion" (click)="getPosts($event, i)">
+      <div class="title" [innerHTML]="post.title | titlecase"></div>
+      <div [innerHTML]="post.body | titlecase"></div>
+      <div class="panel" *ngIf="post.isActive" hide="!post.isActive">
+        <app-comment commentId="{{ selectedId }}"></app-comment>
+      </div>
+    </div>
+  </ng-container>
+  <div class="loadMore pull-right" *ngIf="loadMoreFlag && posts">
+    <button (click)="loadMoreHandler()" *ngIf="posts.length > 3" [innerHTML]="'Load all'"></button>
+  </div>
+</div>
